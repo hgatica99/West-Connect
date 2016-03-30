@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private NavigationView mNavigationView;
     private DrawerLayout mDrawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,24 +39,24 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
 
         //Initializing NavigationView and DrawerLayout
-        mNavigationView = (NavigationView)findViewById(R.id.navigation_view);
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
-        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             //This method will trigger on item Click of Navigation menu
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 //Checking if the item is in checked state or not, if not make it in checked state
-                if(menuItem.isChecked())menuItem.setChecked(false);
+                if (menuItem.isChecked()) menuItem.setChecked(false);
                 else menuItem.setChecked(true);
 
                 //Closing drawer on item click
                 mDrawerLayout.closeDrawers();
 
                 //Checking to see which item was being clicked and perform appropriate action
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.contacts:
                         Toast.makeText(getApplicationContext(), "Contacts Selected", Toast.LENGTH_SHORT).show();
                         return true;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Initializing ActionBarToggle
-        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,R.string.drawer_opened, R.string.drawer_closed){
+        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.drawer_opened, R.string.drawer_closed) {
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -90,43 +91,42 @@ public class MainActivity extends AppCompatActivity {
         //calling sync state is necessary or else your hamburger icon won't show up
         mDrawerToggle.syncState();
 
-
-
     }
-        private void setupViewPager(ViewPager viewPager) {
-            ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-            adapter.addFragment(new FirstFragment(), "ONE");
-            adapter.addFragment(new SecondFragment(), "TWO");
-            adapter.addFragment(new ThirdFragment(), "THIRD");
-            viewPager.setAdapter(adapter);
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new FirstFragment(), "ONE");
+        adapter.addFragment(new SecondFragment(), "TWO");
+        adapter.addFragment(new ThirdFragment(), "THIRD");
+        viewPager.setAdapter(adapter);
+    }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
         }
 
-        class ViewPagerAdapter extends FragmentPagerAdapter {
-            private final List<Fragment> mFragmentList = new ArrayList<>();
-            private final List<String> mFragmentTitleList = new ArrayList<>();
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
 
-            public ViewPagerAdapter(FragmentManager manager) {
-                super(manager);
-            }
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
 
-            @Override
-            public Fragment getItem(int position) {
-                return mFragmentList.get(position);
-            }
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
 
-            @Override
-            public int getCount() {
-                return mFragmentList.size();
-            }
-
-            public void addFragment(Fragment fragment, String title) {
-                mFragmentList.add(fragment);
-                mFragmentTitleList.add(title);
-            }
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return mFragmentTitleList.get(position);
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
 
         }
     }
