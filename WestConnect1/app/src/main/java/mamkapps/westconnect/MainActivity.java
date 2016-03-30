@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.Transportation:
                         Toast.makeText(getApplicationContext(), "Transportation Selected", Toast.LENGTH_SHORT).show();
                         return true;
+                    case R.id.Settings:
+                        Toast.makeText(getApplicationContext(), "Settings Selected", Toast.LENGTH_SHORT).show();
+                        return true;
                 }
                 return false;
             }
@@ -95,9 +99,10 @@ public class MainActivity extends AppCompatActivity {
     }
         private void setupViewPager(ViewPager viewPager) {
             ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-            adapter.addFragment(new FirstFragment(), "ONE");
-            adapter.addFragment(new SecondFragment(), "TWO");
-            adapter.addFragment(new ThirdFragment(), "THIRD");
+            adapter.addFragment(new FirstFragment(), "     SOCIAL     ");
+            adapter.addFragment(new SecondFragment(), "     ACTIVE     ");
+            adapter.addFragment(new ThirdFragment(), "     GAMES     ");
+            adapter.addFragment(new FourthFragment(), "     CULINARY     ");
             viewPager.setAdapter(adapter);
         }
 
@@ -135,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 //         Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        return false;
     }
 
     @Override
@@ -151,5 +156,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (this.mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            this.mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }

@@ -4,11 +4,44 @@
     android:layout_height="match_parent"
     tools:context="mamkapps.westconnect.FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView1"
+                style="@style/CardView.Light"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_below="@id/cardView1"
+                style="@style/CardView.Light"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_below="@id/cardView2"
+                style="@style/CardView.Light"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"></android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </FrameLayout>
