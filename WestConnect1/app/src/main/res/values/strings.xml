@@ -3,4 +3,16 @@
     <string name="action_settings">Settings</string>
     <string name="drawer_opened">Open</string>
     <string name="drawer_closed">Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_club1">Club1Activity</string>
+    <string name="title_activity_club2">Club2Activity</string>
+    <string name="title_activity_club3">Club3Activity</string>
+    <string name="title_activity_club4">Club4Activity</string>
+    <string name="title_activity_club5">Club5Activity</string>
+    <string name="title_activity_club6">Club6Activity</string>
+    <string name="title_activity_club7">Club7Activity</string>
+    <string name="title_activity_club8">Club8Activity</string>
+    <string name="title_activity_club9">Club9Activity</string>
 </resources>

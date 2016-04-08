@@ -18,6 +18,78 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Club1Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club2Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club3Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club4Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club5Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club6Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club7Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club8Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Club9Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mamkapps.westconnect.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

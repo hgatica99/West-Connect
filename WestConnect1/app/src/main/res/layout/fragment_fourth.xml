@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="10dp"
-    tools:context="mamkapps.westconnect.SecondFragment">
+    tools:context="mamkapps.westconnect.FourthFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/frag2_cardView1"
+                android:id="@+id/frag4_cardView1"
                 style="@style/CardView.Light"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
@@ -23,26 +23,25 @@
                 android:layout_marginTop="10dp"></android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/frag2_cardView2"
+                android:id="@+id/frag4_cardView2"
                 style="@style/CardView.Light"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_below="@id/frag2_cardView1"
+                android:layout_below="@id/frag4_cardView1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"></android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/frag2_cardView3"
+                android:id="@+id/frag4_cardView3"
                 style="@style/CardView.Light"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_below="@id/frag2_cardView2"
+                android:layout_below="@id/frag4_cardView2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"></android.support.v7.widget.CardView>
 
         </RelativeLayout>
     </ScrollView>
-
 </FrameLayout>
